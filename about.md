@@ -4,10 +4,9 @@ title: About
 sidebar_link: true
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it
-  for your own use upon downloading. Carry on!
-</p>
+I am currently working as Data Scientist at [Spiceworks](https://www.spiceworks.com/), focusing on problems 
+related to Natural Language processing. Previously, with DBS Bank I was primarily working on 
+cash forecasting of ATMs using Time Series forecasting models.
 
-To make pages show up in the sidebar, add `sidebar_link: true` to the front
-matter.
+Prior to that I have completed my masters degree in Software engineering from [IIIT-Allahabad.](https://www.iiita.ac.in/) 
+
