@@ -128,7 +128,7 @@ You can see the full set of partials you can replace in the
   parameter in the front matter. This works for both category and non-category
   pages, although non-category pages will always come first. Take a look at
   [`_includes/sidebar-nav-links.html`](./_includes/sidebar-nav-links.html) if
-  you want to customize this behavior.
+  you want to customize this behavior.\
 
   ```
   ---
