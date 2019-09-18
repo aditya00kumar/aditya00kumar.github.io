@@ -1,6 +1,7 @@
 ---
 layout: category
 title: Blog Posts
+category: NLP
 ---
 
 Sample category page. You need to create a page for each category.
