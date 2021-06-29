@@ -12,3 +12,4 @@ I have completed my masters degree in Software engineering from [IIIT-Allahabad]
 
 For further information please mail me: aditya00kumar[at]gmail[dot]com
 
+<figure><embed src="https://wakatime.com/share/@69576c69-c4a5-4a6b-8acc-fa47215f1637/daab6be1-838c-4c54-903f-191c3492b296.svg"></embed></figure>
