@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            Aditya Kumar
 tagline:          'Aditya Kumar'
-description:      'Data Scientist at Snowflake'
+description:      'Senior ML Scientist at Snowflake'
 url:              http://aditya00kumar.github.io/
 baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
