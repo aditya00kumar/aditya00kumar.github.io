@@ -237,15 +237,18 @@ The most defensible reading is modest: the balanced merge was a promising recall
 
 ## Limitations and what I would change
 
-This was a single-model, single-seed, local-GPU pilot. The 24 final prompts cover only eight source claim clusters, with three question forms per cluster. The scores are manual judgments, not a blind multi-rater benchmark or a statistically powered comparison. The source audit is based on a single release article and has not received an independent second-person review.
+This was a single-model, single-seed pilot on a local GPU. The final evaluation covered 24 prompts across eight claim clusters, scored manually by one evaluator rather than through a blind, multi-rater benchmark. The source audit covered one release article and was not independently verified.
 
-There are design limitations too. Both Pilot v1 arms had 240 optimizer steps and, assuming every row was processed each epoch, 30 example presentations per claim cluster. The saved artifacts do not establish equal answer-token exposure. Arm A and Arm B used mismatched prefix supervision. The alternative-formulation diagnostic was examined after training, so it is development evidence rather than a clean final test. The two additional merge weights were run after the primary final results had been scored and cannot be used for unbiased model selection.
+The training comparison also had limitations. Both arms used 240 optimizer steps and, assuming every row was processed each epoch, 30 presentations per claim cluster. However, answer-token exposure was not matched, and prefix supervision differed between arms. The alternative-formulation check and two additional merge-weight sweeps were exploratory, not confirmatory evidence of generalization or a superior merge.
 
-If I ran a follow-up experiment, I would make four changes.
+A follow-up experiment would address four things:
 
-First, I would write a claim ledger with independent source verification before authoring examples. Each claim would explicitly name its required qualifier and the nearby tempting-but-unsupported details. Second, I would balance not only optimizer steps and example presentations but also tokenizer-measured answer-token exposure per claim cluster, response-prefix supervision, and the number of forms per fact. Third, I would create multiple frozen splits before training: one for development/model selection and a separate confirmatory set, and persist the development rubric scores and selection rule before opening the final set. Fourth, I would treat retrieval as a serious baseline for evidence-grounded technical questions, not merely background context.
+1. **Verify the claims:** Maintain a source-verified claim ledger recording the evidence, required qualifiers, and nearby unsupported details for each claim.
+2. **Balance training exposure:** Match answer-token exposure, prefix supervision, and question-form diversity per claim—not just optimizer steps and example presentations.
+3. **Separate selection from evaluation:** Freeze development and confirmatory sets before training, and define the scoring rubric and selection rules before evaluating the final set.
+4. **Include retrieval:** Treat retrieval as a serious baseline for evidence-grounded technical questions.
 
-The broader lesson is pleasantly unfashionable: a fine-tuned answer should be evaluated as evidence-bearing technical communication, not as a string that resembles a reference. The model may have learned a response shape, a keyword association, a piece of a fact, or an answer template. Those are different outcomes. If the task requires reliable defaults, API labels, version boundaries, and honest abstention, the evaluation must test each one directly.
+The broader lesson is that fine-tuned answers should be evaluated as **evidence-bearing technical communication**, not just strings that resemble references. A model may learn a response pattern, a keyword association, part of a fact, or an answer template. These are different outcomes. If reliability depends on exact defaults, API names, version boundaries, and appropriate abstention, each must be evaluated explicitly.
 
 ## References
 
