@@ -21,6 +21,7 @@ last_modified_at: 2026-10-15T00:00:00+05:30
 Fine-tuning a language model on a technical document looks deceptively simple. Turn a document into question-answer pairs, train a small adapter, ask a similar question, and inspect the answer. If the model reproduces the answer it saw during training, it is tempting to say that the model learned the document.
 
 This post is about why that conclusion is too strong.
+<!--more-->
 
 Asked which PyTorch version it knew, the base model said it had no PyTorch-specific training data and claimed PyTorch 2.1.0 was latest in June 2024. The training-data statement is a model self-report, not verified corpus metadata.
 
@@ -28,7 +29,7 @@ That version claim was wrong: [PyTorch 2.3](https://pytorch.org/blog/pytorch2-3/
 
 I ran a small, local experiment using QLoRA on Qwen3-4B. The [PyTorch 2.14 release blog](https://pytorch.org/blog/pytorch-2-14-release-blog/) was the only source used to construct training targets and ground expected evaluation answers. The model's pretrained knowledge remained present and could contribute to its responses; the source constraint did not erase or disable it. The goal was not to build a production assistant or to compare every possible knowledge-injection method. It was narrower: can a parameter-efficient fine-tune preserve technical facts, defaults, version boundaries, and source limitations when a question is asked in a new form?
 
-The short answer is: it can reproduce training answers, and it can sometimes transfer pieces of a fact, but that was not the same thing as reliable generalization. The most useful lesson was not a winning adapter weight. It was learning to separate recall, qualification, and evidence discipline instead of treating a fluent answer as a pass. <!--more-->
+The short answer is: it can reproduce training answers, and it can sometimes transfer pieces of a fact, but that was not the same thing as reliable generalization. The most useful lesson was not a winning adapter weight. It was learning to separate recall, qualification, and evidence discipline instead of treating a fluent answer as a pass.
 
 ## Why run this experiment?
 
