@@ -4,7 +4,7 @@ title: "Fine-Tuning Isn't Generalization: Teaching Qwen3-4B PyTorch Knowledge wi
 categories:
   - Machine Learning
   - Large Language Models
-  - Experimentation
+  - Fine-Tuning
   - post
 comments: true
 tags:
